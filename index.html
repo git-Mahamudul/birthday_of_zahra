@@ -11,11 +11,11 @@
     <link rel="icon" href="pics/946068-adoring.png" type="image/png">
 </head>
 <body>
-    <div class="particles" id="particles"></div>
+    <div class="particle" id="particle"></div>
 
     <section class="hero" id="hero">
         <div class="hero-content">
-            <h1 class="typewriter" id="typewriter">Happy Birthday my sweet cutie patootie bestfriend, Zahra💓</h1>
+            <h1 class="typewriter" id="typewriter">Happy Birthday My Dear Zahra💓</h1>
             <p class="subtitle fade-in">Today is all about you and celebrating the day perfectly, enjoy the day you pretty little beauty 😋</p>
             <div class="floating-hearts">
                 <div class="heart">💘</div>
@@ -24,7 +24,7 @@
                 <div class="heart">💞</div>
                 <div class="heart">💟</div>
             </div>
-            <button class="cta-btn" onclick="scrollToSection('gallery')">Maybe us together?😏</button>
+            <button class="cta-btn" onclick="scrollToGallery()">Maybe us together? 😏 (click here)</button>
             <div class="scroll-indicator">
                 <div class="scroll-arrow"></div>
             </div>
@@ -75,7 +75,7 @@
                     <div class="photo-container">
                         <img src="pics/IMG-20260205-WA0015~2.jpg" alt="">
                         <div class="photo-overlay">
-                            <div class="photo-caption">Prettiest girl in my eyes</div>
+                            <div class="photo-caption">Prettiest girl in my eye</div>
                             <button class="like-btn" onclick="toggleLike(this)">
                                 <span class="heart-icon">💗</span>
                             </button>
@@ -143,6 +143,43 @@
         </div>
     </footer>
 
-    <script src="animation.js"></script>
+    <script>
+const emojis = ["💕", "💝", "🥳", "😙", "🌷", "🎂", "🎀", "💄", "🦋"];
+
+function createEmoji() {
+    const emoji = document.createElement("div");
+    emoji.classList.add("particle");
+    emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+
+    // Random horizontal position
+    emoji.style.left = Math.random() * 100 + "vw";
+
+    // Random vertical start position
+    emoji.style.top = Math.random() * 100 + "vh";
+
+    // Random size
+    emoji.style.fontSize = (Math.random() * 20 + 15) + "px";
+
+    // Random animation duration
+    emoji.style.animationDuration = (Math.random() * 5 + 5) + "s";
+
+    document.body.appendChild(emoji);
+
+    // Remove emoji after some time
+    setTimeout(() => {
+        emoji.remove();
+    }, 10000);
+}
+
+// Create emojis continuously
+setInterval(createEmoji, 500);
+
+function scrollToGallery() {
+    document.querySelector(".gallery-section").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+</script>
+
 </body>
 </html>

@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
     setupScrollAnimation();
 });
 
-function createParticles() {
-    const particle= document. getElementById('particles');
+function createParticle() {
+    const particle= document. getElementById('particle');
     const particleEmojis= ['💕','💝','🥳','😙','🌷','🎂','🎀','💄','🦋'];
 
     for (let i=0; i<15; i++) {
         const particle= document. createElement('div');
-        particle.className= 'particle';
+        particle.className= 'particles';
         particle.innerHTML= particleEmojis[Math.floor(Math.random()*particleEmojis.length)];
 
         particle.style.left = Math.random()* 100 + '%' ;
